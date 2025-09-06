@@ -1,0 +1,268 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #333;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #ff7f50;
+}
+
+/* Hero */
+.hero {
+  background: url("pizza-hero.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 3rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ff7f50;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background: #ff4500;
+}
+
+.slideshow {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fafafa;
+}
+
+.slideshow h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 coloane */
+  gap: 20px; /* spațiu între ele */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gallery-grid .slider {
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  background: #fff;
+}
+
+.gallery-grid .slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* Slideshow individual */
+.slider {
+  width: 200%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  animation: slide 10s infinite;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animația slideshow */
+@keyframes slide {
+  0%   { transform: translateX(0); }
+  30%  { transform: translateX(0); }
+  35%  { transform: translateX(-100%); }
+  65%  { transform: translateX(-100%); }
+  70%  { transform: translateX(-200%); }
+  100% { transform: translateX(-200%); }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Menu */
+.menu {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  width: 250px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.menu-item:hover {
+  transform: translateY(-8px);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;         /* toate imaginile vor avea aceeași înălțime */
+  object-fit: cover;     /* decupează imaginea frumos să umple containerul */
+  border-bottom: 3px solid #ff7f50;
+  display: block;
+}
+
+
+.menu-item h3 {
+  color: #ff7f50;
+  margin: 15px 0;
+}
+
+/* About */
+.about {
+  background: #fafafa;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+/* Contact */
+.contact {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background: #ff7f50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #ff4500;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+footer a {
+  color: #ff7f50;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .menu-items { flex-direction: column; align-items: center; }
+  .slider { width: 90%; }
+  .hero h2 { font-size: 2rem; }
+}
