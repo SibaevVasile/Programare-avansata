@@ -49,7 +49,7 @@ nav ul li a.active {
 
 /* Hero */
 .hero {
-  background: url("pizza-hero.jpg") center/cover no-repeat;
+  background: url("img/pizza-hero.jpg") center/cover no-repeat;
   color: white;
   text-align: center;
   padding: 120px 20px;
