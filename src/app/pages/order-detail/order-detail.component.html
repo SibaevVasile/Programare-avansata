@@ -1,0 +1,24 @@
+<h2>🧾 Detalii Comandă #{{ order.id }}</h2>
+
+<p><strong>Client:</strong> {{ order.client }}</p>
+<p><strong>Adresă:</strong> {{ order.address }}</p>
+<p><strong>Status:</strong> {{ order.status }}</p>
+<p><strong>Total:</strong> {{ order.total }} lei</p>
+
+<h3>Produse comandate:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Produs</th>
+      <th>Cantitate</th>
+      <th>Preț</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of order.items">
+      <td>{{ item.product }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>{{ item.price }}</td>
+    </tr>
+  </tbody>
+</table>

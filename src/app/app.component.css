@@ -1,13 +1,4 @@
-/* Stiluri globale pentru întregul proiect */
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fff5f5;
-  margin: 0;
-  padding: 0;
-}
-
-/* Bara de navigare (poate fi aici sau în app.component.css) */
+/* Bara de navigare */
 .navbar {
   display: flex;
   justify-content: center;
@@ -32,8 +23,17 @@ body {
   text-decoration: underline;
 }
 
+/* Linie de separare */
 hr {
   border: 0;
   border-top: 1px solid #ccc;
   margin: 0;
+}
+
+/* Stil general */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff5f5;
+  margin: 0;
+  padding: 0;
 }
