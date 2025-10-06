@@ -1,39 +1,125 @@
-/* Bara de navigare */
+/* Tema Light/Dark */
+.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --card-bg: #f0f0f0;
+  --navbar-bg: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --card-bg: #1e1e1e;
+  --navbar-bg: #1b1b1b;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navbar */
 .navbar {
   display: flex;
-  justify-content: center;
-  background-color: #e63946;
-  padding: 10px 0;
+  gap: 15px;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--navbar-bg);
+  color: var(--text-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
 
 .navbar a {
-  color: white;
   text-decoration: none;
-  margin: 0 15px;
+  color: var(--text-color);
   font-weight: bold;
-  font-size: 1rem;
-  transition: color 0.2s;
-}
-
-.navbar a:hover {
-  color: #ffddd2;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .navbar a.active {
-  text-decoration: underline;
+  border-bottom: 2px solid var(--text-color);
 }
 
-/* Linie de separare */
+/* Controale Dark/Light + Limbă */
+.controls button {
+  margin-left: 5px;
+  padding: 5px 12px;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.controls button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* Carduri statistici */
+.stats {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: black; /* text permanent negru */
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1 1 150px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.card h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.5em;
+}
+
+.card p {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  color: var(--text-color);
+}
+
+th {
+  font-weight: bold;
+  background-color: var(--card-bg);
+}
+
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.5;
+}
+
 hr {
   border: 0;
   border-top: 1px solid #ccc;
-  margin: 0;
-}
-
-/* Stil general */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fff5f5;
-  margin: 0;
-  padding: 0;
+  margin: 20px 0;
 }

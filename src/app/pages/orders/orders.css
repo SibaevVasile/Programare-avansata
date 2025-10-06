@@ -1,19 +1,32 @@
-table {
-  width: 90%;
-  margin: 0 auto;
+.orders-table {
+  width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+  background-color: var(--card-bg, #fff);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  text-align: center;
+.orders-table th,
+.orders-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: rgb(155, 53, 53); /* text rămâne negru chiar și în dark mode */
 }
 
-th {
-  background-color: #ffe6e6;
+.orders-table th {
+  background-color: var(--bg-color, #f4f4f4);
+  font-weight: bold;
 }
 
-tr:hover {
-  background-color: #fff0f0;
+.orders-table tr:hover {
+  background-color: rgba(0,0,0,0.05);
+  transition: 0.2s;
+}
+
+.orders-table tbody tr:last-child td {
+  border-bottom: none;
 }

@@ -1,27 +1,29 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // dacă folosești input-uri
+import { SettingsService } from '../../services/settings.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule],
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.css']
 })
 export class SettingsComponent {
-  username = 'admin';
-  email = 'admin@pizzaria.md';
+  theme$: Observable<string>;
+  lang$: Observable<string>;
 
-  theme = 'light';
-  language = 'ro';
+  constructor(private settings: SettingsService) {
+    this.theme$ = this.settings.theme$;
+    this.lang$ = this.settings.lang$;
+  }
 
   toggleTheme() {
-    this.theme = this.theme === 'light' ? 'dark' : 'light';
+    this.settings.toggleTheme();
   }
 
-  changeLanguage(lang: string) {
-    this.language = lang;
+  toggleLanguage() {
+    this.settings.toggleLanguage();
   }
-
 }

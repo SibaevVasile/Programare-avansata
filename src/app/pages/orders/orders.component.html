@@ -1,12 +1,12 @@
-<h2>📦 Lista Comenzi</h2>
+<h2>📦 {{ (lang$ | async) === 'ro' ? 'Comenzi' : 'Orders' }}</h2>
 
-<table>
+<table class="orders-table">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Client</th>
-      <th>Total (lei)</th>
-      <th>Status</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'ID' : 'ID' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Client' : 'Client' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Total (lei)' : 'Total' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Status' : 'Status' }}</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
       <td>{{ order.id }}</td>
       <td>{{ order.client }}</td>
       <td>{{ order.total }}</td>
-      <td>{{ order.status }}</td>
+      <td>{{ (lang$ | async) === 'ro' ? order.statusRo : order.statusEn }}</td>
     </tr>
   </tbody>
 </table>

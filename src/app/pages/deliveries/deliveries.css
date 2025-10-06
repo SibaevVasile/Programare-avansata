@@ -1,19 +1,54 @@
+/* Layout general */
+h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: var(--text-color);
+}
+
+/* Tabel livrări */
 table {
-  width: 90%;
-  margin: 0 auto;
+  width: 100%;
   border-collapse: collapse;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  margin-top: 15px;
+}
+
+thead {
+  background-color: #e0e0e0;
 }
 
 th, td {
-  padding: 10px;
+  padding: 12px 15px;
+  text-align: left;
   border-bottom: 1px solid #ccc;
-  text-align: center;
-}
-
-th {
-  background-color: #ffe6e6;
+  color: rgb(155, 53, 53); /* text permanent negru */
 }
 
 tr:hover {
-  background-color: #fff0f0;
+  background-color: rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  th {
+    display: none;
+  }
+  td {
+    padding: 10px 0;
+    border: none;
+    position: relative;
+  }
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
 }

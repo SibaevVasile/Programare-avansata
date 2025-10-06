@@ -1,12 +1,12 @@
-<h2>🚚 Livrări</h2>
+<h2>🚚 {{ (lang$ | async) === 'ro' ? 'Livrări' : 'Deliveries' }}</h2>
 
 <table>
   <thead>
     <tr>
-      <th>ID Comandă</th>
-      <th>Client</th>
-      <th>Adresă</th>
-      <th>Status</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'ID' : 'ID' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Client' : 'Customer' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Adresă' : 'Address' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Status' : 'Status' }}</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
       <td>{{ delivery.id }}</td>
       <td>{{ delivery.client }}</td>
       <td>{{ delivery.address }}</td>
-      <td>{{ delivery.status }}</td>
+      <td>{{ (lang$ | async) === 'ro' ? delivery.statusRo : delivery.statusEn }}</td>
     </tr>
   </tbody>
 </table>

@@ -1,21 +1,21 @@
-<h2>🍕 Dashboard - Pizzaria</h2>
+<h2>🍕 {{ (lang$ | async) === 'ro' ? 'Tablou de bord' : 'Dashboard' }} - Pizzaria</h2>
 
 <section class="stats">
   <div class="card" *ngFor="let item of stats">
     <h3>{{ item.value }}</h3>
-    <p>{{ item.label }}</p>
+    <p>{{ (lang$ | async) === 'ro' ? item.labelRo : item.labelEn }}</p>
   </div>
 </section>
 
-<h3>📦 Ultimele comenzi</h3>
+<h3>📦 {{ (lang$ | async) === 'ro' ? 'Ultimele comenzi' : 'Recent Orders' }}</h3>
 
 <table>
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Client</th>
-      <th>Total (lei)</th>
-      <th>Status</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'ID' : 'ID' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Client' : 'Client' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Total (lei)' : 'Total (lei)' }}</th>
+      <th>{{ (lang$ | async) === 'ro' ? 'Status' : 'Status' }}</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +23,7 @@
       <td>{{ order.id }}</td>
       <td>{{ order.client }}</td>
       <td>{{ order.total }}</td>
-      <td>{{ order.status }}</td>
+      <td>{{ (lang$ | async) === 'ro' ? order.statusRo : order.statusEn }}</td>
     </tr>
   </tbody>
 </table>

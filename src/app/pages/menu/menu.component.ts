@@ -1,5 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SettingsService } from '../../services/settings.service';
+import { Observable } from 'rxjs';
+
+interface MenuItem {
+  nameRo: string;
+  nameEn: string;
+  price: number;
+  descriptionRo: string;
+  descriptionEn: string;
+  image: string;
+}
 
 @Component({
   selector: 'app-menu',
@@ -9,14 +20,28 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./menu.css']
 })
 export class MenuComponent {
+  menuItems: MenuItem[] = [
+  { nameRo: 'Pizza Margherita', nameEn: 'Margherita Pizza', price: 35,
+    descriptionRo: 'Roșii, mozzarella, busuioc', descriptionEn: 'Tomato, mozzarella, basil',
+    image: 'pizza-margherita.jpg' },
 
-  menuItems = [
-    { name: 'Pizza Margherita', price: 70 },
-    { name: 'Pizza Pepperoni', price: 80 },
-    { name: 'Pizza Quattro Formaggi', price: 90 },
-    { name: 'Salată Caesar', price: 45 },
-    { name: 'Suc Cola', price: 35 },
-    { name: 'Apă minerală', price: 20 }
-  ];
+  { nameRo: 'Pizza Quattro Formaggi', nameEn: 'Four Cheese Pizza', price: 45,
+    descriptionRo: 'Mozzarella, gorgonzola, parmezan, brânză de capră', descriptionEn: 'Mozzarella, gorgonzola, parmesan, goat cheese',
+    image: 'pizza-quattro.jpg' },
 
+  { nameRo: 'Pizza Pepperoni', nameEn: 'Pepperoni Pizza', price: 40,
+    descriptionRo: 'Mozzarella, salam pepperoni', descriptionEn: 'Mozzarella, pepperoni sausage',
+    image: 'pizza-pepperoni.jpg' },
+
+  { nameRo: 'Salată Caesar', nameEn: 'Caesar Salad', price: 25,
+    descriptionRo: 'Salată, pui, parmezan, sos Caesar', descriptionEn: 'Lettuce, chicken, parmesan, Caesar dressing',
+    image: 'caesar-salad.jpg' }
+];
+
+
+  lang$: Observable<string>;
+
+  constructor(private settings: SettingsService) {
+    this.lang$ = this.settings.lang$; // folosit în template
+  }
 }

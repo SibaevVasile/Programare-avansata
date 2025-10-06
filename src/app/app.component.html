@@ -1,12 +1,24 @@
-<nav class="navbar">
-  <a routerLink="/dashboard" routerLinkActive="active">🏠 Dashboard</a>
-  <a routerLink="/orders" routerLinkActive="active">📦 Comenzi</a>
-  <a routerLink="/menu" routerLinkActive="active">🍕 Meniu</a>
-  <a routerLink="/deliveries" routerLinkActive="active">🚚 Livrări</a>
-  <a routerLink="/settings" routerLinkActive="active">⚙️ Setări</a>
-</nav>
+<div [ngClass]="(theme$ | async)">
+  <nav class="navbar">
+    <div class="links">
+      <a routerLink="/dashboard" routerLinkActive="active">🏠 {{ (lang$ | async) === 'ro' ? 'Tablou de bord' : 'Dashboard' }}</a>
+      <a routerLink="/orders" routerLinkActive="active">📦 {{ (lang$ | async) === 'ro' ? 'Comenzi' : 'Orders' }}</a>
+      <a routerLink="/menu" routerLinkActive="active">🍕 {{ (lang$ | async) === 'ro' ? 'Meniu' : 'Menu' }}</a>
+      <a routerLink="/deliveries" routerLinkActive="active">🚚 {{ (lang$ | async) === 'ro' ? 'Livrări' : 'Deliveries' }}</a>
+      <a routerLink="/settings" routerLinkActive="active">⚙️ {{ (lang$ | async) === 'ro' ? 'Setări' : 'Settings' }}</a>
+    </div>
 
-<hr>
+    <div class="controls">
+      <button (click)="toggleTheme()">
+        🌓 {{ (theme$ | async) === 'light' ? 'Dark' : 'Light' }}
+      </button>
+      <button (click)="toggleLanguage()">
+        🌐 {{ (lang$ | async) === 'ro' ? 'EN' : 'RO' }}
+      </button>
+    </div>
+  </nav>
 
-<!-- Aici se vor încărca paginile rutei selectate -->
-<router-outlet></router-outlet>
+  <hr>
+
+  <router-outlet></router-outlet>
+</div>

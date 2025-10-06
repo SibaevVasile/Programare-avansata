@@ -1,13 +1,54 @@
-ul {
-  list-style: none;
-  padding: 0;
-  width: 60%;
-  margin: 20px auto;
+/* Layout general */
+h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: var(--text-color);
 }
 
-li {
-  background-color: #ffe6e6;
-  padding: 10px;
+/* Grid meniu */
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Carduri produse */
+.menu-card {
+  flex: 1 1 200px;
+  background-color: var(--card-bg);
+  color: rgb(155, 53, 53); /* text permanent negru */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.menu-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Titlu produs */
+.menu-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+}
+
+/* Descriere produs */
+.menu-card p {
   margin: 5px 0;
-  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-grid {
+    flex-direction: column;
+  }
 }

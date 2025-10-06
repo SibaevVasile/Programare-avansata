@@ -19,7 +19,6 @@ export class OrderDetailComponent {
     items: [
       { product: 'Pizza Margherita', quantity: 1, price: 70 },
       { product: 'Pizza Pepperoni', quantity: 1, price: 80 },
-      { product: 'Suc Cola', quantity: 1, price: 35 },
     ]
   };
 

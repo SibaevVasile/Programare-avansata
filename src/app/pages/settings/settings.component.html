@@ -1,12 +1,25 @@
-<h2>⚙️ Setări aplicație</h2>
+<div class="settings-container">
+  <h2>{{ (lang$ | async) === 'ro' ? '⚙️ Setări' : '⚙️ Settings' }}</h2>
 
-<div>
-  <p>Temă curentă: {{ theme }}</p>
-  <button (click)="toggleTheme()">Schimbă tema</button>
-</div>
+  <div class="setting-item">
+    <h3>{{ (lang$ | async) === 'ro' ? 'Tema aplicației' : 'App Theme' }}</h3>
+    <button (click)="toggleTheme()">
+      {{ (lang$ | async) === 'ro' ? 'Schimbă tema' : 'Toggle Theme' }}
+    </button>
+    <p>
+      {{ (theme$ | async) === 'light' 
+        ? ((lang$ | async) === 'ro' ? 'Tema curentă: Luminoasă ☀️' : 'Current theme: Light ☀️') 
+        : ((lang$ | async) === 'ro' ? 'Tema curentă: Întunecată 🌙' : 'Current theme: Dark 🌙') }}
+    </p>
+  </div>
 
-<div>
-  <p>Limba curentă: {{ language }}</p>
-  <button (click)="changeLanguage('ro')">Română</button>
-  <button (click)="changeLanguage('en')">Engleză</button>
+  <div class="setting-item">
+    <h3>{{ (lang$ | async) === 'ro' ? 'Limba aplicației' : 'Application Language' }}</h3>
+    <button (click)="toggleLanguage()">
+      {{ (lang$ | async) === 'ro' ? 'Schimbă în Engleză 🇬🇧' : 'Switch to Romanian 🇷🇴' }}
+    </button>
+    <p>
+      {{ (lang$ | async) === 'ro' ? 'Limba curentă: Română 🇷🇴' : 'Current language: English 🇬🇧' }}
+    </p>
+  </div>
 </div>
