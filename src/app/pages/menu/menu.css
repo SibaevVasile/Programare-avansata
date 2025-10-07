@@ -16,7 +16,7 @@ h2 {
 .menu-card {
   flex: 1 1 200px;
   background-color: var(--card-bg);
-  color: rgb(155, 53, 53); /* text permanent negru */
+  color: rgb(155, 53, 53); /* text permanent */
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);

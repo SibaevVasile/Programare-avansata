@@ -20,10 +20,10 @@ interface Delivery {
 })
 export class DeliveriesComponent {
   deliveries: Delivery[] = [
-    { id: 101, client: 'Ion Popescu', address: 'Str. Libertății 12', statusRo: 'În curs', statusEn: 'In Progress' },
-    { id: 102, client: 'Maria Ionescu', address: 'Str. Primăverii 7', statusRo: 'Finalizată', statusEn: 'Completed' },
-    { id: 103, client: 'Andrei Vasilescu', address: 'Str. Independenței 23', statusRo: 'Anulată', statusEn: 'Cancelled' },
-    { id: 104, client: 'Elena Dinu', address: 'Str. Mihai Eminescu 5', statusRo: 'În așteptare', statusEn: 'Pending' }
+    { id: 101, client: 'Ion Popescu', address: 'Str. Libertății 12', statusRo: 'În livrare', statusEn: 'In delivery' },
+    { id: 102, client: 'Maria Ionescu', address: 'Str. Primăverii 7', statusRo: 'Pregătire', statusEn: 'Preparing' },
+    { id: 103, client: 'Andrei Vasilescu', address: 'Str. Independenței 23', statusRo: 'Finalizată', statusEn: 'Completed' },
+    { id: 104, client: 'Elena Dinu', address: 'Str. Mihai Eminescu 5', statusRo: 'Preluată', statusEn: 'Picked up' }
   ];
 
   lang$: Observable<string>;

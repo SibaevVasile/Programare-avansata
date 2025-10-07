@@ -1,15 +1,107 @@
-table {
-  width: 80%;
-  margin: 10px auto;
-  border-collapse: collapse;
+.order-detail-container {
+  padding: 2rem;
+  background-color: #fafafa;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
 }
 
-th, td {
-  border-bottom: 1px solid #ccc;
-  padding: 8px;
+.order-detail-container.dark {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.order-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.back-btn {
+  background-color: #0078ff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #005fcc;
+}
+
+.order-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+  margin-bottom: 2rem;
+}
+
+.order-detail-container.dark .order-card {
+  background: #1f1f1f;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+}
+
+.info-group p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.items-section {
+  margin-top: 2rem;
+}
+
+.items-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.items-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.items-section li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  background-color: rgba(0,0,0,0.03);
+  padding: 0.8rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.order-detail-container.dark .items-section li {
+  background-color: rgba(255,255,255,0.05);
+}
+
+.items-section img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.not-found {
   text-align: center;
-}
-
-th {
-  background-color: #ffe6e6;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+  color: #888;
 }

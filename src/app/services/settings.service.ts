@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators'; // ✅ Import necesar pentru map()
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,9 @@ export class SettingsService {
 
   theme$ = this.theme.asObservable();
   lang$ = this.language.asObservable();
+
+  // 🔹 Adăugăm fluxul care emite true dacă tema e dark
+  isDarkMode$ = this.theme$.pipe(map(theme => theme === 'dark'));
 
   toggleTheme() {
     const newTheme = this.theme.value === 'light' ? 'dark' : 'light';

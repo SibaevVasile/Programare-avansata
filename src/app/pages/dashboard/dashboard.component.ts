@@ -18,16 +18,16 @@ export class DashboardComponent {
   }
 
   stats = [
-    { labelRo: 'Comenzi active', labelEn: 'Active Orders', value: 12 },
-    { labelRo: 'Comenzi finalizate', labelEn: 'Completed Orders', value: 84 },
-    { labelRo: 'Produse în meniu', labelEn: 'Menu Items', value: 26 },
-    { labelRo: 'Livratori disponibili', labelEn: 'Available Couriers', value: 4 }
+    { labelRo: 'Comenzi active', labelEn: 'Active Orders', value: 3 },
+    { labelRo: 'Comenzi finalizate', labelEn: 'Completed Orders', value: 1 },
+    { labelRo: 'Produse în meniu', labelEn: 'Menu Items', value: 4 },
+    { labelRo: 'Livratori disponibili', labelEn: 'Available Couriers', value: 1 }
   ];
 
   recentOrders = [
-    { id: 101, client: 'Ion Popescu', total: 185, statusRo: 'În livrare', statusEn: 'Delivering' },
-    { id: 102, client: 'Maria Ionescu', total: 92, statusRo: 'Pregătire', statusEn: 'Preparing' },
-    { id: 103, client: 'Andrei Vasilescu', total: 125, statusRo: 'Finalizată', statusEn: 'Completed' },
-    { id: 104, client: 'Elena Dinu', total: 74, statusRo: 'Preluată', statusEn: 'Picked up' },
+    { id: 101, client: 'Ion Popescu', total: 310, statusRo: 'În livrare', statusEn: 'Delivering' },
+    { id: 102, client: 'Maria Ionescu', total: 120, statusRo: 'Pregătire', statusEn: 'Preparing' },
+    { id: 103, client: 'Andrei Vasilescu', total: 185, statusRo: 'Finalizată', statusEn: 'Completed' },
+    { id: 104, client: 'Elena Dinu', total: 175, statusRo: 'Preluată', statusEn: 'Picked up' },
   ];
 }

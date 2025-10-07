@@ -21,19 +21,19 @@ interface MenuItem {
 })
 export class MenuComponent {
   menuItems: MenuItem[] = [
-  { nameRo: 'Pizza Margherita', nameEn: 'Margherita Pizza', price: 35,
+  { nameRo: 'Pizza Margherita', nameEn: 'Margherita Pizza', price: 100,
     descriptionRo: 'Roșii, mozzarella, busuioc', descriptionEn: 'Tomato, mozzarella, basil',
     image: 'pizza-margherita.jpg' },
 
-  { nameRo: 'Pizza Quattro Formaggi', nameEn: 'Four Cheese Pizza', price: 45,
+  { nameRo: 'Pizza Quattro Formaggi', nameEn: 'Four Cheese Pizza', price: 120,
     descriptionRo: 'Mozzarella, gorgonzola, parmezan, brânză de capră', descriptionEn: 'Mozzarella, gorgonzola, parmesan, goat cheese',
     image: 'pizza-quattro.jpg' },
 
-  { nameRo: 'Pizza Pepperoni', nameEn: 'Pepperoni Pizza', price: 40,
+  { nameRo: 'Pizza Pepperoni', nameEn: 'Pepperoni Pizza', price: 110,
     descriptionRo: 'Mozzarella, salam pepperoni', descriptionEn: 'Mozzarella, pepperoni sausage',
     image: 'pizza-pepperoni.jpg' },
 
-  { nameRo: 'Salată Caesar', nameEn: 'Caesar Salad', price: 25,
+  { nameRo: 'Salată Caesar', nameEn: 'Caesar Salad', price: 75,
     descriptionRo: 'Salată, pui, parmezan, sos Caesar', descriptionEn: 'Lettuce, chicken, parmesan, Caesar dressing',
     image: 'caesar-salad.jpg' }
 ];

@@ -1,24 +1,40 @@
-<h2>🧾 Detalii Comandă #{{ order.id }}</h2>
+<div class="order-detail-container" [ngClass]="(theme$ | async)">
+  <div *ngIf="order; else notFound">
+    <!-- Header comanda -->
+    <div class="order-header">
+      <h2>📦 {{ (lang$ | async) === 'ro' ? 'Detalii Comandă' : 'Order Details' }} #{{ order.id }}</h2>
+      <button class="back-btn" [routerLink]="['/orders']">
+        {{ (lang$ | async) === 'ro' ? 'Înapoi la comenzi' : 'Back to Orders' }}
+      </button>
+    </div>
+    <!-- Info comanda -->
+    <div class="order-card">
+      <div class="info-group">
+        <p><strong>{{ (lang$ | async) === 'ro' ? 'Client:' : 'Client:' }}</strong> {{ order.client }}</p>
+        <p><strong>{{ (lang$ | async) === 'ro' ? 'Total:' : 'Total:' }}</strong> {{ order.total }} lei</p>
+        <p><strong>{{ (lang$ | async) === 'ro' ? 'Status:' : 'Status:' }}</strong>
+          {{ (lang$ | async) === 'ro' ? order.statusRo : order.statusEn }}
+        </p>
+      </div>
+    </div>
 
-<p><strong>Client:</strong> {{ order.client }}</p>
-<p><strong>Adresă:</strong> {{ order.address }}</p>
-<p><strong>Status:</strong> {{ order.status }}</p>
-<p><strong>Total:</strong> {{ order.total }} lei</p>
+    <!-- Produse -->
+    <div class="items-section">
+      <h3>🍕 {{ (lang$ | async) === 'ro' ? 'Produse comandate' : 'Ordered Items' }}</h3>
+      <ul>
+        <li *ngFor="let item of order.items">
+          <img [src]="'/' + item.image" [alt]="(lang$ | async) === 'ro' ? item.nameRo : item.nameEn">
+          <div class="item-info">
+            <span>{{ (lang$ | async) === 'ro' ? item.nameRo : item.nameEn }}</span>
+            <span>{{ (lang$ | async) === 'ro' ? 'Cantitate:' : 'Qty:' }} {{ item.quantity }}</span>
+            <span>{{ item.price }} lei</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-<h3>Produse comandate:</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Produs</th>
-      <th>Cantitate</th>
-      <th>Preț</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let item of order.items">
-      <td>{{ item.product }}</td>
-      <td>{{ item.quantity }}</td>
-      <td>{{ item.price }}</td>
-    </tr>
-  </tbody>
-</table>
+  <ng-template #notFound>
+    <p class="not-found">{{ (lang$ | async) === 'ro' ? 'Comanda nu a fost găsită' : 'Order not found' }}</p>
+  </ng-template>
+</div>
